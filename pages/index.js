@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -22,7 +22,7 @@ Page({
   onReady: function () {
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.title = 'music'
-    backgroundAudioManager.src = 'https://carefree7.github.io/invitation-is-s/music/mymusic.mp3'
+    backgroundAudioManager.src = 'https://github.com/799953468/WeChatProject/raw/main/music/mymusic.mp3'
   },
 
   /**
@@ -70,21 +70,21 @@ Page({
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.stop()
     this.setData({
-      on: true
+      musicOn: true
     })
     this.setData({
-      off: false
+      musicOff: false
     })
   },
   On: function(){
     const backgroundAudioManager = wx.getBackgroundAudioManager()
-    backgroundAudioManager.src = 'https://carefree7.github.io/invitation-is-s/music/mymusic.mp3'
+    backgroundAudioManager.src = 'https://github.com/799953468/WeChatProject/raw/main/music/mymusic.mp3'
     backgroundAudioManager.play()
     this.setData({
-      on: false
+      musicOn: false
     })
     this.setData({
-      off: true
+      musicOff: true
     })
   }
 })

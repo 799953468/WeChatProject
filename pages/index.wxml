@@ -2,24 +2,23 @@
 <view id="music">
   <view hidden="{{ musicOn }}" class="musicOn">
     <button bindtap="Off"></button>
-    <image class="musicOn" src="/images/onMusic.png"></image>
+    <image class="musicOn rotate" src="https://github.com/799953468/WeChatProject/raw/main/images/onMusic.png">
+    </image>
   </view>
   <view hidden="{{ musicOff }}" class="musicOff">
     <button bindtap="On"></button>
-    <image class="musicOff" src="/images/offMusic.png"></image>
+    <image class="musicOff" src="https://github.com/799953468/WeChatProject/raw/main/images/offMusic.png"></image>
   </view>
 </view>
-<view id="bg">
-  <view id="bg-1"></view>
+<view class="bg">
+  <view class="bg-1"></view>
 </view>
 <view class="page" id="dcommon">
-  <ul>
-    <li id="dcommon-1">
-      <view style="width:1.0rem;height:100%;position:absolute;background-image:url(/image/kuang2.jpg);"></view>
-      <view style="width:1.0rem;height:100%;right:0;position:absolute;background-image:url(/image/kuang2.jpg);">
-      </view>
-      <view style="height:1.0rem;width:100%;position:absolute;background-image:url(/image/kuangTop.jpg);"></view>
-      <view style="height:1.0rem;width:100%;bottom:0;position:absolute;"></view>
-    </li>
-  </ul>
+  <view class="left"></view>
+  <view class="right"></view>
+  <view class="button"></view>
+  <view class="top"></view>
+  <arrow class="arrow">
+    <image src="https://github.com/799953468/WeChatProject/raw/main/images/arrow.png" />
+  </arrow>
 </view>
