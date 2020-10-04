@@ -7,7 +7,10 @@ Page({
   data: {
     musicOn: false,
     musicOff: true,
-    page1: false
+    name: '杨 一 中 & 张 鹤',
+    data: '2018.05.26',
+    page1: true,
+    page2: false
   },
 
   /**

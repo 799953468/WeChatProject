@@ -31,4 +31,26 @@
   <view class="d1-7"></view>
   <view class="d1-8"></view>
   <view class="d1-9"></view>
+  <view class="d1-10">{{ name }}</view>
+  <view class="d1-11">{{ data }}</view>
+</view>
+<view class="page page2" hidden="{{ page2 }}">
+  <view class="d2-2">
+    <view>诚挚邀请</view>
+  </view>
+  <view class="d2-3"></view>
+  <view class="d2-4"></view>
+  <view class="d2-5"></view>
+  <view class="d2-6">
+    <view>最美好的季节</view>
+    <view>我们找到彼此的幸福</view>
+    <view>我们将幸福无限延伸</view>
+    <view>诚邀亲爱的你</view>
+    <view>参与我们的婚礼</view>
+    <view>共同见证这幸福的时刻</view>
+    <view>------------------</view>
+    <view>2018.05.26 11:28</view>
+    <view>湖南·新化</view>
+    <view>海天大酒店</view>
+  </view>
 </view>

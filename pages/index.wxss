@@ -1,4 +1,6 @@
 /* pages/index.wxss */
+@import './animation.wxss';
+
 #music {
   position: fixed;
   z-index: 10;
@@ -30,15 +32,6 @@
   animation: rotate 3s linear infinite;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg)
-  }
-
-  to {
-    transform: rotate(359deg)
-  }
-}
 
 .bg {
   width: 100%;
@@ -61,6 +54,9 @@
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  animation: zoomIn 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .page {
@@ -70,6 +66,10 @@
   top: 3%;
   left: 5%;
   overflow: hidden;
+  animation: fadeInLeft 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .page .left {
@@ -109,30 +109,17 @@
   z-index: 10;
   bottom: 5%;
   left: 50%;
-  margin-left: -30rpx;
+  margin-left: -50rpx;
   animation: next 1.5s linear infinite;
 }
 
 .arrow image {
   width: 100rpx;
   height: 60rpx;
-}
-
-@keyframes next {
-  0% {
-    transform: translateY(0rpx);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(-25rpx);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateY(-50rpx);
-    opacity: 0;
-  }
+  animation: slideInButton 2s;
+  animation-delay: 5000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-2 {
@@ -143,6 +130,10 @@
   height: 945rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/kuang.jpg);
   background-repeat: no-repeat;
+  animation: flipInY 2s;
+  animation-delay: 2500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-3 {
@@ -154,6 +145,10 @@
   left: 20%;
   top: 25%;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/bigXi.jpg);
+  animation: flipInY 2s;
+  animation-delay: 3000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-4 {
@@ -165,6 +160,10 @@
   right: 18rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/cloud.jpg);
   background-repeat: no-repeat;
+  animation: slideInLeft 2s;
+  animation-delay: 3500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-5 {
@@ -176,6 +175,10 @@
   left: 60rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/cloud.jpg);
   background-repeat: no-repeat;
+  animation: slideInLeft 2s;
+  animation-delay: 3500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-6 {
@@ -187,6 +190,10 @@
   left: 30rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/boy3.jpg);
   background-repeat: no-repeat;
+  animation: slideInLeft 2s;
+  animation-delay: 4000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-7 {
@@ -198,6 +205,10 @@
   right: 0;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/bigGirl.jpg);
   background-repeat: no-repeat;
+  animation: slideInRight 2s;
+  animation-delay: 4000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-8 {
@@ -209,6 +220,10 @@
   left: 30rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/san.jpg);
   background-repeat: no-repeat;
+  animation: slideInLeft 2s;
+  animation-delay: 4500ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .d1-9 {
@@ -216,9 +231,95 @@
   background-size: 100%;
   bottom: 100rpx;
   left: 50%;
-  margin-left: -105rpx;
+  margin-left: -125rpx;
   width: 250rpx;
   height: 80rpx;
   background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/xi.jpg);
   background-repeat: no-repeat;
+  animation: zoomIn 2s;
+  animation-delay: 5000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.d1-10,
+.d1-11 {
+  position: absolute;
+  color: #fff;
+  font-size: 24rpx;
+  width: 200rpx;
+  height: 50rpx;
+  bottom: 70rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  animation: zoomIn 2s;
+  animation-delay: 5000ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.d1-11 {
+  bottom: 40rpx;
+  margin-left: -60rpx;
+}
+
+.d2-2 {
+  display: block;
+  background-size: 100%;
+  width: 450rpx;
+  height: 180rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/header.jpg);
+  background-repeat: no-repeat;
+}
+
+.d2-2 view {
+  text-align: center;
+  padding-top: 45rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.d2-3 {
+  background-size: 50%;
+  position: absolute;
+  width: 171rpx;
+  height: 234rpx;
+  bottom: 0;
+  left: 30rpx;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/boy3.jpg);
+  background-repeat: no-repeat;
+}
+
+.d2-4 {
+  background-size: 70%;
+  position: absolute;
+  width: 112rpx;
+  height: 225rpx;
+  bottom: 0;
+  right: -1rpx;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/girl3.jpg);
+  background-repeat: no-repeat;
+}
+
+.d2-5 {
+  position: absolute;
+  background-size: 100%;
+  top: 110rpx;
+  width: 630rpx;
+  height: 830rpx;
+  left: 25rpx;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/toper.jpg);
+  background-repeat: no-repeat;
+}
+
+.d2-6 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 300rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 55rpx;
 }
