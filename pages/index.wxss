@@ -1,0 +1,25 @@
+/* pages/index.wxss */
+#music{
+  position: fixed;
+  z-index: 10;
+  right: 20rpx;
+  top: 20rpx;
+}
+#music button{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: none;
+  color: transparent;
+  z-index: 11;
+}
+.musicOn{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.musicOff{
+  width: 100rpx;
+  height: 100rpx;
+}
