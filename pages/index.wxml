@@ -22,3 +22,13 @@
     <image src="https://github.com/799953468/WeChatProject/raw/main/images/arrow.png" />
   </arrow>
 </view>
+<view class="page page1" hidden="{{ page1 }}">
+  <view class="d1-2"></view>
+  <view class="d1-3"></view>
+  <view class="d1-4"></view>
+  <view class="d1-5"></view>
+  <view class="d1-6"></view>
+  <view class="d1-7"></view>
+  <view class="d1-8"></view>
+  <view class="d1-9"></view>
+</view>

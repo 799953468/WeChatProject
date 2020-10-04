@@ -6,7 +6,8 @@ Page({
    */
   data: {
     musicOn: false,
-    musicOff: true
+    musicOff: true,
+    page1: false
   },
 
   /**
