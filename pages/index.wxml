@@ -1,56 +1,61 @@
 <!--pages/index.wxml-->
-<view id="music">
-  <view hidden="{{ musicOn }}" class="musicOn">
-    <button bindtap="Off"></button>
-    <image class="musicOn rotate" src="https://github.com/799953468/WeChatProject/raw/main/images/onMusic.png">
-    </image>
+<view bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchmove='touchMove'>
+  <view id="music">
+    <view hidden="{{ musicOn }}" class="musicOn">
+      <button bindtap="Off"></button>
+      <image class="musicOn rotate" src="https://github.com/799953468/WeChatProject/raw/main/images/onMusic.png">
+      </image>
+    </view>
+    <view hidden="{{ musicOff }}" class="musicOff">
+      <button bindtap="On"></button>
+      <image class="musicOff" src="https://github.com/799953468/WeChatProject/raw/main/images/offMusic.png"></image>
+    </view>
   </view>
-  <view hidden="{{ musicOff }}" class="musicOff">
-    <button bindtap="On"></button>
-    <image class="musicOff" src="https://github.com/799953468/WeChatProject/raw/main/images/offMusic.png"></image>
+  <view class="bg">
+    <view class="bg-1 {{ showbg }}"></view>
   </view>
-</view>
-<view class="bg">
-  <view class="bg-1"></view>
-</view>
-<view class="page" id="dcommon">
-  <view class="left"></view>
-  <view class="right"></view>
-  <view class="button"></view>
-  <view class="top"></view>
-  <arrow class="arrow">
-    <image src="https://github.com/799953468/WeChatProject/raw/main/images/arrow.png" />
-  </arrow>
-</view>
-<view class="page page1" hidden="{{ page1 }}">
-  <view class="d1-2"></view>
-  <view class="d1-3"></view>
-  <view class="d1-4"></view>
-  <view class="d1-5"></view>
-  <view class="d1-6"></view>
-  <view class="d1-7"></view>
-  <view class="d1-8"></view>
-  <view class="d1-9"></view>
-  <view class="d1-10">{{ name }}</view>
-  <view class="d1-11">{{ data }}</view>
-</view>
-<view class="page page2" hidden="{{ page2 }}">
-  <view class="d2-2">
-    <view>诚挚邀请</view>
+  <view class="page" id="dcommon">
+    <view class="left {{ show1 }}"></view>
+    <view class="right {{ show1 }}"></view>
+    <view class="button {{ show1 }}"></view>
+    <view class="top {{ show1 }}"></view>
+    <arrow class="arrow {{ showarrow }}">
+      <image src="https://github.com/799953468/WeChatProject/raw/main/images/arrow.png" />
+    </arrow>
   </view>
-  <view class="d2-3"></view>
-  <view class="d2-4"></view>
-  <view class="d2-5"></view>
-  <view class="d2-6">
-    <view>最美好的季节</view>
-    <view>我们找到彼此的幸福</view>
-    <view>我们将幸福无限延伸</view>
-    <view>诚邀亲爱的你</view>
-    <view>参与我们的婚礼</view>
-    <view>共同见证这幸福的时刻</view>
-    <view>------------------</view>
-    <view>2018.05.26 11:28</view>
-    <view>湖南·新化</view>
-    <view>海天大酒店</view>
+  <view class="page page1" hidden="{{ page1 }}">
+    <view class="{{ show1_2 }} d1-2"></view>
+    <view class="{{ show1_3 }} d1-3"></view>
+    <view class="d1-4 {{ show1_4 }}"></view>
+    <view class="d1-5 {{ show1_5 }}"></view>
+    <view class="d1-6 {{ show1_6 }}"></view>
+    <view class="d1-7 {{ show1_7 }}"></view>
+    <view class="d1-8 {{ show1_8 }}"></view>
+    <view class="d1-9 {{ show1_9 }}"></view>
+    <view class="d1-10 {{ show1_10 }}">{{ name }}</view>
+    <view class="d1-11 {{ show1_11 }}">{{ data }}</view>
   </view>
+  <view class="page page2" hidden="{{ page2 }}">
+    <view class="d2-2 {{ show2_2 }}">
+      <view>诚挚邀请</view>
+    </view>
+    <view class="d2-3 {{ show2_3 }}"></view>
+    <view class="d2-4 {{ show2_4 }}"></view>
+    <view class="d2-5 {{ show2_5 }}"></view>
+    <view class="d2-6 {{ show2_6 }}">
+      <view>最美好的季节</view>
+      <view>我们找到彼此的幸福</view>
+      <view>我们将幸福无限延伸</view>
+      <view>诚邀亲爱的你</view>
+      <view>参与我们的婚礼</view>
+      <view>共同见证这幸福的时刻</view>
+      <view>------------------</view>
+      <view>2018.05.26 11:28</view>
+      <view>湖南·新化</view>
+      <view>海天大酒店</view>
+    </view>
+  </view>
+  <view class="page page3" hidden="{{ page3 }}">
+    <view></view>
+  </view> 
 </view>

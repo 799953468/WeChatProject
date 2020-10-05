@@ -1,58 +1,137 @@
 // pages/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     musicOn: false,
     musicOff: true,
     name: '杨 一 中 & 张 鹤',
     data: '2018.05.26',
-    page1: true,
-    page2: false
+    flag: false,
+    page1: false,
+    showbg: '',
+    show1: '',
+    show1_2: '',
+    show1_3: '',
+    show1_4: '',
+    page2: true,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-    
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  },
+  showbg: function () {
+    this.setData({
+      showbg: 'zoomIn animated show'
+    })
+    setTimeout(this.show1, 1000)
+  },
+  show1: function () {
+    this.setData({
+      show1: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show1_2, 1000)
+  },
+  show1_2: function () {
+    this.setData({
+      show1_2: 'flipInY animated show'
+    })
+    setTimeout(this.show1_3, 1000)
+  },
+  show1_3: function () {
+    this.setData({
+      show1_3: 'flipInY animated show'
+    })
+    setTimeout(this.show1_4, 1000)
+  },
+  show1_4: function () {
+    this.setData({
+      show1_4: 'slideInLeft animated show',
+      show1_5: 'slideInLeft animated show'
+    })
+    setTimeout(this.show1_5, 1000)
+  },
+  show1_5: function () {
+    this.setData({
+      show1_6: 'slideInLeft animated show',
+      show1_7: 'slideInRight animated show'
+    })
+    setTimeout(this.show1_6, 1000)
+  },
+  show1_6: function () {
+    this.setData({
+      show1_8: 'slideInLeft animated show',
+    })
+    setTimeout(this.show1_7, 1000)
+  },
+  show1_7: function () {
+    this.setData({
+      show1_9: 'zoomIn animated show',
+    })
+    setTimeout(this.show1_8, 1000)
+  },
+  show1_8: function () {
+    this.setData({
+      show1_10: 'zoomIn animated show',
+      show1_11: 'zoomIn animated show',
+    })
+    setTimeout(this.showarrow, 1000)
+  },
+  showarrow: function () {
+    this.setData({
+      showarrow: 'show fadeOutUp animated infinite',
+      flag: true
+    })
+  },
+  show2: function () {
+    this.setData({
+      showbg: 'zoomIn animated show',
+      show1: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show2_1, 1000)
+  },
+  show2_1: function () {
+    this.setData({
+      show2_2: 'fadeInDown animated show'
+    })
+    setTimeout(this.show2_2, 1000)
+  },
+  show2_2: function () {
+    this.setData({
+      show2_3: 'fadeInRight animated show',
+      show2_4: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show2_3, 1000)
+  },
+  show2_3: function () {
+    this.setData({
+      show2_5: 'flipInY animated show'
+    })
+    setTimeout(this.show2_4, 1000)
+  },
+  show2_4: function () {
+    this.setData({
+      show2_6: 'bounce animated show'
+    })
+  },
   onReady: function () {
+    this.showbg()
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.title = 'music'
     backgroundAudioManager.src = 'https://github.com/799953468/WeChatProject/raw/main/music/mymusic.mp3'
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
 
   },
@@ -80,7 +159,7 @@ Page({
       musicOff: false
     })
   },
-  On: function(){
+  On: function () {
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.src = 'https://github.com/799953468/WeChatProject/raw/main/music/mymusic.mp3'
     backgroundAudioManager.play()
@@ -90,5 +169,30 @@ Page({
     this.setData({
       musicOff: true
     })
-  }
+  },
+  touchStart(e) {
+    this.setData({
+      startY: e.touches[0].pageY
+    })
+  },
+  touchMove: function (e) {
+    this.setData({
+      moveY: e.touches[0].pageY
+    })
+  },
+  touchEnd(e) {
+    console.log(this.data.moveY);
+    if (this.data.flag) {
+      if (this.data.startY - this.data.moveY > 50) {
+        this.setData({
+          page1: true,
+          page2: false,
+          flag: false,
+          showbg: '',
+          show1: ''
+        })
+        setTimeout(this.show2,100);
+      }
+    }
+  },
 })
