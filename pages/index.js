@@ -6,9 +6,10 @@ Page({
     name: '杨 一 中 & 张 鹤',
     data: '2018.05.26',
     flag: false,
-    page1: true,
+    index: 1,
+    page1: false,
     page2: true,
-    page3: false
+    page3: true,
   },
 
   onLoad: function (options) {
@@ -107,6 +108,44 @@ Page({
     this.setData({
       show2_6: 'bounce animated show'
     })
+    setTimeout(this.showarrow,1000)
+  },
+  show3:function(){
+    this.setData({
+      showbg: 'zoomIn animated show',
+      show1: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show3_1, 1000)
+  },
+  show3_1: function(){
+    this.setData({
+      show3_2: 'flipInY animated show'
+    })
+    setTimeout(this.show3_2,1000)
+  },
+  show3_2: function(){
+    this.setData({
+      show3_3: 'bounce animated show'
+    })
+    setTimeout(this.show3_3,1000)
+  },
+  show3_3: function(){
+    this.setData({
+      show3_4: 'flipInX animated show'
+    })
+    setTimeout(this.show3_4,1000)
+  },
+  show3_4: function(){
+    this.setData({
+      show3_5: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show3_5,1000)
+  },
+  show3_5: function(){
+    this.setData({
+      show3_6: 'fadeInRight animated show'
+    })
+    setTimeout(this.showarrow,1000)
   },
   onReady: function () {
     this.showbg()
@@ -177,17 +216,46 @@ Page({
     })
   },
   touchEnd(e) {
-    console.log(this.data.moveY);
     if (this.data.flag) {
       if (this.data.startY - this.data.moveY > 50) {
-        this.setData({
-          page1: true,
-          page2: false,
-          flag: false,
-          showbg: '',
-          show1: ''
-        })
-        setTimeout(this.show2,100);
+        switch (this.data.index) {
+          case 1:
+            this.setData({
+              page1: true,
+              page2: false,
+              flag: false,
+              showbg: '',
+              show1: '',
+              showarrow: '',
+              index: 2
+            })
+            setTimeout(this.show2, 100);
+            break;
+          case 2:
+            this.setData({
+              page2: true,
+              page3: false,
+              flag: false,
+              showbg: '',
+              show1: '',
+              showarrow: '',
+              index: 3
+            })
+            setTimeout(this.show3, 100);
+            break;
+          case 3:
+            this.setData({
+              page3: true,
+              page4: false,
+              flag: false,
+              showbg: '',
+              show1: '',
+              showarrow: '',
+              index: 4
+            })
+            setTimeout(this.show4, 100);
+            break;
+        }
       }
     }
   },
