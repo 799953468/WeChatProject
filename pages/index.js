@@ -6,13 +6,9 @@ Page({
     name: '杨 一 中 & 张 鹤',
     data: '2018.05.26',
     flag: false,
-    page1: false,
-    showbg: '',
-    show1: '',
-    show1_2: '',
-    show1_3: '',
-    show1_4: '',
+    page1: true,
     page2: true,
+    page3: false
   },
 
   onLoad: function (options) {

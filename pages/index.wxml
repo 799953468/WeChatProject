@@ -56,6 +56,13 @@
     </view>
   </view>
   <view class="page page3" hidden="{{ page3 }}">
-    <view></view>
-  </view> 
+    <view class="d3-2 {{ show3_2 }}"></view>
+    <view class="d3-3 {{ show3_3 }}">新郎<view>杨一中</view></view>
+    <view class="d3-4 {{ show3_4 }}"></view>
+    <view class="d3-5 {{ show3_5 }}"></view>
+    <view class="d3-6 {{ show3_6 }}">
+      <P>感谢大家对我祝福</P>
+      <P>愿我此刻的幸福能传递给你</P>
+    </view>
+  </view>
 </view>
