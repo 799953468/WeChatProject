@@ -10,6 +10,8 @@ Page({
     page1: false,
     page2: true,
     page3: true,
+    page4: true,
+    page5: true,
   },
 
   onLoad: function (options) {
@@ -147,6 +149,62 @@ Page({
     })
     setTimeout(this.showarrow,1000)
   },
+  show4: function(){
+    this.setData({
+      showbg: 'zoomIn animated show',
+      show1: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show4_1, 1000)
+  },
+  show4_1: function(){
+    this.setData({
+      show4_2: 'flipInY animated show'
+    })
+    setTimeout(this.show4_2,1000)
+  },
+  show4_2: function(){
+    this.setData({
+      show4_3: 'bounce animated show'
+    })
+    setTimeout(this.show4_3,1000)
+  },
+  show4_3: function(){
+    this.setData({
+      show4_4: 'flipInX animated show'
+    })
+    setTimeout(this.show4_4,1000)
+  },
+  show4_4: function(){
+    this.setData({
+      show4_5: 'fadeInRight animated show'
+    })
+    setTimeout(this.show4_5,1000)
+  },
+  show4_5: function(){
+    this.setData({
+      show4_6: 'fadeInLeft animated show'
+    })
+    setTimeout(this.showarrow,1000)
+  },
+  show5: function(){
+    this.setData({
+      showbg: 'zoomIn animated show',
+      show1: 'fadeInLeft animated show'
+    })
+    setTimeout(this.show5_1, 1000)
+  },
+  show5_1: function(){
+    this.setData({
+      show5_2: 'fadeInDown animated show'
+    })
+    setTimeout(this.show5_2,1000)
+  },
+  show5_2: function(){
+    this.setData({
+      show5_3: 'bounce animated show'
+    })
+    setTimeout(this.showarrow,1000)
+  },
   onReady: function () {
     this.showbg()
     const backgroundAudioManager = wx.getBackgroundAudioManager()
@@ -255,6 +313,30 @@ Page({
             })
             setTimeout(this.show4, 100);
             break;
+          case 4:
+            this.setData({
+              page5: false,
+              page4: true,
+              flag: false,
+              showbg: '',
+              show1: '',
+              showarrow: '',
+              index: 5
+            })
+            setTimeout(this.show5, 100);
+            break;
+            case 5:
+              this.setData({
+                page6: false,
+                page5: true,
+                flag: false,
+                showbg: '',
+                show1: '',
+                showarrow: '',
+                index: 6
+              })
+              setTimeout(this.show6, 100);
+              break;
         }
       }
     }
