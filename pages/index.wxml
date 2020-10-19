@@ -84,4 +84,36 @@
       <p>我们携手前行，不离不弃！</p>
     </view>
   </view>
+  <view class="page page6" hidden="{{ page6 }}">
+    <view class="d6-2 {{ show6_2 }}"></view>
+    <view class="d6-3 {{ show6_3 }}">
+      <p>春·暖的花开带走冬天的感伤</p>
+      <p>微风吹来浪漫的气息</p>
+    </view>
+    <view class="6-4 {{ show6_4 }}"></view>
+  </view>
+  <view class="page page7" hidden="{{ page7 }}">
+    <view class="d7-2 {{ show7_2 }}"></view>
+    <view class="d7-3 {{ show7_3 }}">
+      <p>夏·鸟儿的高歌拉近我们距离</p>
+      <p>我就在此刻突然爱上你</p>
+    </view>
+  </view>
+  <view class="page page8" hidden="{{ page8 }}">
+    <view class="d8-2 {{ show8_2 }}">
+      <p>秋·听我说</p>
+      <p>手牵手 跟我一起走</p>
+      <p>创造幸福的生活</p>
+    </view>
+    <view class="d8-3 {{ show8_3 }}"></view>
+  </view>
+  <view class="page page9" hidden="{{ page9 }}">
+    <view class="d9-2 {{ show9_2 }}"></view>
+    <view class="d9-3 {{ show9_3 }}">
+      <p>冬·今天嫁给我好吗</p>
+    </view>
+  </view>
+  <view class="page page10" hidden="{{ page10 }}">
+
+  </view>
 </view>

@@ -473,7 +473,86 @@
   font-size: 30rpx;
   opacity: 0;
 }
+
 .d5-3 p {
   display: flex;
   justify-content: center;
+}
+
+.d6-2 {
+  background-size: 89%;
+  top: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/b46.png);
+}
+
+.d6-3 {
+  position: absolute;
+  bottom: 80rpx;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  opacity: 0;
+}
+
+.d6-3 p {
+  display: flex;
+  justify-content: center;
+}
+
+.d6-4 {
+  background-size: 89%;
+  bottom: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/b49.png);
+}
+
+.d8-3 {
+  background-size: 89%;
+  top: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/c21.png);
+  background-position: center top;
+}
+
+.d8-4 {
+  background-size: 89%;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/c12.png);
+  background-position: center center;
+}
+
+.d8-5 {
+  background-size: 89%;
+  bottom: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/c29.png);
+  background-position: center bottom;
+}
+
+.d9-2 {
+  background-size: 89%;
+  top: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/a46.png);
+  background-position: center top;
+}
+
+.d9-4 {
+  background-size: 89%;
+  bottom: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/up/a7-16.png);
+  background-position: center bottom;
+}
+
+.d10-3 {
+  background-size: 14%;
+  bottom: 1rem;
+  left: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/boy3.jpg);
+  background-position: 0 100%;
+}
+
+.d10-4 {
+  background-size: 14%;
+  bottom: 1rem;
+  right: 1rem;
+  background-image: url(https://github.com/799953468/WeChatProject/raw/main/images/girl3.jpg);
+  background-position: 100% 100%;
 }
