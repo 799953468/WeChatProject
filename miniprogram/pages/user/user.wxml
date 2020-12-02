@@ -1,0 +1,44 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="info">
+  <image class="user_img" src="../../images/user-unlogin.png"></image>
+  <view class="user_info">
+    <view class="user_name">{{ user_name }}</view>
+    <view class="user_tel">{{ user_tel }}</view>
+  </view>
+  <view class="user_list">
+    <view class="item">
+      <span>{{ mycard }}</span>
+      <span>我的请帖</span>
+    </view>
+    <view class="item">
+      <span>{{ receivedcard }}</span>
+      <span>我收到的请帖</span>
+    </view>
+    <view class="item">
+      <span>{{ draft }}</span>
+      <span>草稿</span>
+    </view>
+  </view>
+  <view class="more"></view>
+</view>
+<view class="user_setting">
+  <view class="item remind">
+    <span>提醒</span>
+    <view class="more"></view>
+  </view>
+  <view class="item user_set">
+    <button bindtap="user_set" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
+    <span>用户设置</span>
+    <view class="more"></view>
+  </view>
+</view>
+<view class="setting">
+  <view class="item">
+    <span>联系客服</span>
+    <view class="more"></view>
+  </view>
+  <view class="item">
+    <span>更多</span>
+    <view class="more"></view>
+  </view>
+</view>

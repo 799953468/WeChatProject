@@ -1,2 +1,194 @@
-<!--pages/card/card.wxml-->
-<text>pages/card/card.wxml</text>
+<!--pages/index.wxml-->
+<view bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchmove='touchMove'>
+  <view id="music">
+    <view hidden="{{ musicOn }}" class="musicOn">
+      <button bindtap="Off"></button>
+      <image class="musicOn rotate" src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/onMusic.png">
+      </image>
+    </view>
+    <view hidden="{{ musicOff }}" class="musicOff">
+      <button bindtap="On"></button>
+      <image class="musicOff" src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/offMusic.png"></image>
+    </view>
+  </view>
+  <view class="bg">
+    <image class="bg" src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/bgbg.jpg"></image>
+    <image class="bg-1 {{ showbg }}" src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/bg.jpg"></image>
+  </view>
+  <view class="page" id="dcommon">
+    <view class="left {{ show1 }}"></view>
+    <view class="right {{ show1 }}"></view>
+    <view class="button {{ show1 }}"></view>
+    <view class="top {{ show1 }}"></view>
+    <arrow class="arrow {{ showarrow }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/arrow.png" />
+    </arrow>
+  </view>
+  <view class="page page1" hidden="{{ page1 }}">
+    <view class="{{ show1_2 }} d1-2">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/kuang.jpg"></image>
+    </view>
+    <view class="{{ show1_3 }} d1-3">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/bigXi.jpg"></image>
+    </view>
+    <view class="d1-4 {{ show1_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/cloud.jpg"></image>
+    </view>
+    <view class="d1-5 {{ show1_5 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/cloud.jpg"></image>
+    </view>
+    <view class="d1-6 {{ show1_6 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/boy.jpg"></image>
+    </view>
+    <view class="d1-7 {{ show1_7 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/bigGirl.jpg"></image>
+    </view>
+    <view class="d1-8 {{ show1_8 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/san.jpg"></image>
+    </view>
+    <view class="d1-9 {{ show1_9 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/xi.jpg"></image>
+    </view>
+    <view class="d1-10 {{ show1_10 }}">{{ groom }} & {{ bride }}</view>
+    <view class="d1-11 {{ show1_11 }}">{{ data }}</view>
+  </view>
+  <view class="page page2" hidden="{{ page2 }}">
+    <view class="d2-2 {{ show2_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/header.jpg"></image>
+      <view>诚挚邀请</view>
+    </view>
+    <view class="d2-3 {{ show2_3 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/boy.jpg"></image>
+    </view>
+    <view class="d2-4 {{ show2_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/girl.jpg"></image>
+    </view>
+    <view class="d2-5 {{ show2_5 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/toper.jpg"></image>
+    </view>
+    <view class="d2-6 {{ show2_6 }}">
+      <view>最美好的季节</view>
+      <view>我们找到彼此的幸福</view>
+      <view>我们将幸福无限延伸</view>
+      <view>诚邀亲爱的你</view>
+      <view>参与我们的婚礼</view>
+      <view>共同见证这幸福的时刻</view>
+      <view>------------------</view>
+      <view>2020.11.24 11:28</view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+  <view class="page page3" hidden="{{ page3 }}">
+    <view class="d3-2 {{ show3_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/righer.jpg"></image>
+    </view>
+    <view class="d3-3 {{ show3_3 }}">新郎 {{ groom }}</view>
+    <view class="d3-4 {{ show3_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/xinlang.png"></image>
+    </view>
+    <view class="d3-5 {{ show3_5 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/boy2.jpg"></image>
+    </view>
+    <view class="d3-6 {{ show3_6 }}">
+      <P>感谢大家对我祝福</P>
+      <P>愿我此刻的幸福能传递给你</P>
+    </view>
+  </view>
+  <view class="page page4" hidden="{{ page4 }}">
+    <view class="d4-2 {{ show4_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/righer.jpg"></image>
+    </view>
+    <view class="d4-3 {{ show4_3 }}">新娘 {{ bride }}</view>
+    <view class="d4-4 {{ show4_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/xinniang.png"></image>
+    </view>
+    <view class="d4-5 {{ show4_5 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/bigGirl.jpg"></image>
+    </view>
+    <view class="d4-6 {{ show4_6 }}">
+      <p>感谢大家对我祝福</p>
+      <P>愿我此刻的幸福能传递给你</P>
+    </view>
+  </view>
+  <view class="page page5" hidden="{{ page5 }}">
+    <view class="d5-2 {{ show5_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/hezhao.png"></image>
+    </view>
+    <view class="d5-3 {{ show5_3 }}">
+      <p>往后的人生</p>
+      <p>我们携手前行，不离不弃！</p>
+    </view>
+  </view>
+  <view class="page page6" hidden="{{ page6 }}">
+    <view class="d6-2 {{ show6_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+    <view class="d6-3 {{ show6_3 }}">
+      <p>春·暖的花开带走冬天的感伤</p>
+      <p>微风吹来浪漫的气息</p>
+    </view>
+    <view class="d6-4 {{ show6_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+  </view>
+  <view class="page page7" hidden="{{ page7 }}">
+    <view class="d7-2 {{ show7_2 }}">
+      <p>夏·鸟儿的高歌拉近我们距离</p>
+      <p>我就在此刻突然爱上你</p>
+    </view>
+    <view class="d7-3 {{ show7_3 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/hezhao.png"></image>
+    </view>
+  </view>
+  <view class="page page8" hidden="{{ page8 }}">
+    <view class="d8-2 {{ show8_2 }}">
+      <p>秋·听我说</p>
+      <p>手牵手 跟我一起走</p>
+      <p>创造幸福的生活</p>
+    </view>
+    <view class="d8-3 {{ show8_3 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+    <view class="d8-4 {{ show8_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+    <view class="d8-5 {{ show8_5 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+  </view>
+  <view class="page page9" hidden="{{ page9 }}">
+    <view class="d9-2 {{ show9_2 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+    <view class="d9-3 {{ show9_3 }}">
+      <p>冬·今天嫁给我好吗</p>
+    </view>
+    <view class="d9-4 {{ show9_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/demo1.png"></image>
+    </view>
+  </view>
+  <view class="page page10" hidden="{{ page10 }}">
+    <view class="d10-1 {{ show10_1 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/header.jpg"></image>
+      <view>联系我们</view>
+    </view>
+    <view class="d10-2 {{ show10_5 }}">
+      <map
+				id="map"
+				latitude="{{location.latitude}}"
+				longitude="{{location.longitude}}"
+				show-location="{{showPosition}}"
+        enable-traffic="{{isEnableTraffic}}"
+				scale="16"
+			>
+			</map>
+    </view>
+    <view class="d10-3 {{ show10_3 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/boy.jpg"></image>
+    </view>
+    <view class="d10-4 {{ show10_4 }}">
+      <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/girl.jpg"></image>
+    </view>
+  </view>
+</view>

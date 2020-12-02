@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/user_info/user_info",
+    "pages/user/user"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -14,5 +16,27 @@
   "style": "v2",
   "requiredBackgroundModes": [
     "audio"
-  ]
+  ],
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "position": "bottom",
+    "custom": false,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home_off.png",
+        "selectedIconPath": "images/home_on.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/my_off.png",
+        "selectedIconPath": "images/my_on.png"
+      }
+    ]
+  }
 }
