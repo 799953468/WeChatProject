@@ -1,0 +1,26 @@
+<!--miniprogram/pages/index/index.wxml-->
+<view class="info">
+  <image class="user_img" src="../../images/user-unlogin.png"></image>
+  <view class="user_info">
+    <view class="user_name">{{ user_name }}</view>
+    <view class="user_tel">{{ user_tel }}</view>
+  </view>
+  <view class="user_list">
+    <view class="item">
+      <span>{{ mycard }}</span>
+      <span>我的请帖</span>
+    </view>
+    <view class="item">
+      <span>{{ receivedcard }}</span>
+      <span>我收到的请帖</span>
+    </view>
+    <view class="item">
+      <span>{{ draft }}</span>
+      <span>草稿</span>
+    </view>
+  </view>
+  <view class="more"></view>
+</view>
+<view class="setting">
+  
+</view>
