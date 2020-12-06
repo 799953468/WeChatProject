@@ -1,11 +1,10 @@
 // miniprogram/pages/index/index.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    user_name: '张三',
     user_tel: '1231231',
     mycard: 1,
     receivedcard: 2,
@@ -16,9 +15,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    if (app.globalData.openid && app.globalData.openid != '') {
+      this.setData({
+        openid: app.globalData.openid
+      })
+    }else{
+      app.openidCallback = openid => {
+        if (openid != ''){
+          this.setData({
+            openid: openid
+          })
+        }
+      }
+    }
+    const db = wx.cloud.database()
+    db.collection('users').where({
+       _openid: this.data.openid,
+    })
+    .get({
+      success: function(res) {
+        this.setData({
+          
+        })
+      }
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

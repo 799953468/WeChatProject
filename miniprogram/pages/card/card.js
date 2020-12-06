@@ -22,7 +22,6 @@ Page({
 
   onLoad: function (options) {
     let that=this
-
     wx.cloud.database().collection("users").get({
       success(res){       
         that.setData({

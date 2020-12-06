@@ -141,7 +141,7 @@
 .setting {
     position: relative;
     width: 90vw;
-    height: 15vh;
+    height: 24vh;
     border-radius: 15px;
     background: #fff;
     margin: 10px auto;
