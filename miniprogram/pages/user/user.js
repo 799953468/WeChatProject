@@ -9,6 +9,7 @@ Page({
     mycard: 1,
     receivedcard: 2,
     draft: 3,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
@@ -28,17 +29,9 @@ Page({
         }
       }
     }
-    const db = wx.cloud.database()
-    db.collection('users').where({
-       _openid: this.data.openid,
-    })
-    .get({
-      success: function(res) {
-        this.setData({
-          
-        })
-      }
-    })
+  },
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -93,4 +86,9 @@ Page({
       url: "/pages/user_info/user_info"
     })
   },
+  todo: function() {
+    wx.navigateTo({
+      url: '/pages/todo/todo',
+    })
+  }
 })

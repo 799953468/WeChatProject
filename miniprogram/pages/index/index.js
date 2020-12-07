@@ -35,7 +35,9 @@ Page({
           console.log(res.data);
         }else{
           db.collection('users').add({
-            data: {},
+            data: {
+              avatarUrl: ''
+            },
           })
         }
       }

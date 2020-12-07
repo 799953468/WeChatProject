@@ -1,74 +1,7 @@
 <!--miniprogram/pages/user_info/user_info.wxml-->
-
-<view class='zr_editor'>
-  <view class='zr_info'>
-    <view class='title'>
-      <text>基本信息</text>
-    </view>
-    <view class='content'>
-      <view class='img'>
-        <image src='/images/user_info/phone.png'></image>
-      </view>
-      <view class='name'>
-        <text>手机号</text>
-      <block wx:if="{{userInfo.phone===''}}">
-      <view class='btn' data-index="0" bindtap='clicked'>
-        <text>授权</text>
-      </view>
-      </block>
-      <block wx:else>
-      <view class='text' data-index="0" bindtap='clicked'>
-        <text decode="{{true}}">{{userInfo.phone}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
-      </view>
-      </block>
-    </view>
-    </view>
-    <view class='content'>
-      <view class='img'>
-        <image src='/images/user_info/wx.png'></image>
-      </view>
-      <view class='name'>
-        <text>微信号</text>
-      </view>
-      <block wx:if="{{userInfo.wx===''}}">
-      <view class='btn' data-index="1" bindtap='clicked'>
-        <text>填写</text>
-      </view>
-      </block>
-      <block wx:else>
-      <view class='text' data-index="1" bindtap='clicked'>
-        <text decode="{{true}}">{{userInfo.wx}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
-      </view>
-      </block>
-    </view>
-    <view class='content'>
-      <view class='img'>
-        <image src='/images/user_info/name.png'></image>
-      </view>
-      <view class='name'>
-        <text>真实姓名</text>
-      </view>
-      <block wx:if="{{userInfo.name===''}}">
-      <view class='btn' data-index="2" bindtap='clicked'>
-        <text>填写</text>
-      </view>
-      </block>
-      <block wx:else>
-      <view class='text' data-index="2" bindtap='clicked'>
-        <text decode="{{true}}">{{userInfo.name}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
-      </view>
-      </block>
-    </view>
-    <view class='content last'>
-      <view class='img'>
-        <image src='/images/user_info/sex.png'></image>
-      </view>
-      <view class='name'>
-        <text>性别</text>
-      </view>
-      <view class='text' data-index="3" bindtap='clicked'>
-        <text decode="{{true}}">{{userInfo.sex}}&nbsp;&nbsp;&nbsp;&nbsp;></text>
-      </view>
-    </view>
-  </view>
+<view class="info">
+  <view class="item">名称</view>
+  <view class="item"></view>
+  <view class="item"></view>
+  <view class="item"></view>
 </view>

@@ -23,11 +23,12 @@
 </view>
 <view class="user_setting">
   <view class="item remind">
-    <span>提醒</span>
+    <button bindtap="todo" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
+    <span>待办事项</span>
     <view class="more"></view>
   </view>
   <view class="item user_set">
-    <button bindtap="user_set" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" bindtap="user_set" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
     <span>用户设置</span>
     <view class="more"></view>
   </view>
@@ -39,10 +40,6 @@
   </view>
   <view class="item">
     <span>更多</span>
-    <view class="more"></view>
-  </view>
-  <view class="item">
-    <span>退出登录</span>
     <view class="more"></view>
   </view>
 </view>
