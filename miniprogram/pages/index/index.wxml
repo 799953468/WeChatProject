@@ -1,1 +1,8 @@
-<!--miniprogram/pages/index/index.wxml-->
+<!--pages/index.wxml-->
+<view class='a' wx:for="{{temp}}"><!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
+    <!--index为每个数据对应的下标-->
+    <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
+    <view>{{item.Data}}</view>
+    <view >{{item.bride}}</view>
+    <view >{{item.bride_tel}}</view>
+</view>

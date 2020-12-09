@@ -1,4 +1,4 @@
-<!--pages/index.wxml-->
+<!--pages/card.wxml-->
 <view bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchmove='touchMove'>
   <view id="music">
     <view hidden="{{ musicOn }}" class="musicOn">

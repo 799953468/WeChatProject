@@ -1,4 +1,4 @@
-/* pages/index.wxss */
+/* pages/card.wxss */
 /* iPhone 6尺寸作为设计稿基准 */
 @import '/utils/animate.min.wxss';
 

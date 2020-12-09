@@ -4,7 +4,8 @@
     "pages/card/card",
     "pages/user_info/user_info",
     "pages/user/user",
-    "pages/todo/todo"
+    "pages/todo/todo",
+    "pages/make/make"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -30,6 +31,12 @@
         "text": "首页",
         "iconPath": "images/home_off.png",
         "selectedIconPath": "images/home_on.png"
+      },
+      {
+        "pagePath": "pages/make/make",
+        "text": "发布",
+        "iconPath": "images/make_off.png",
+        "selectedIconPath": "images/make_on.png"
       },
       {
         "pagePath": "pages/user/user",

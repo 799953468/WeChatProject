@@ -1,4 +1,5 @@
 //app.js
+const regeneratorRuntime = require("./lib/regenerator/runtime.js");
 App({
   onLaunch: function () {
     if (!wx.cloud) {
