@@ -1,8 +1,35 @@
 <!--pages/index.wxml-->
-<view class='a' wx:for="{{temp}}"><!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
-    <!--index为每个数据对应的下标-->
-    <!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
-    <view>{{item.Data}}</view>
-    <view >{{item.bride}}</view>
-    <view >{{item.bride_tel}}</view>
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/images/wx_login.png'></image>
+        </view>
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+<view wx:else>
+    <view class="time-container">
+        <view class="time-card no-img" wx:for="{{temp}}" wx:key="key">
+            <view class="time-card-cotent-box">
+                <view class="time-card-top">
+                    <view class="time-card-title">
+                        <text class="time-card-title-text">{{item.Date}}</text>
+                    </view>
+                    <view class="time-card-avatar-box">
+                        <image src="{{item.user.avatar_large}}" class="time-card-avatar"></image>
+                    </view>
+                </view>
+                <view class="time-card-sub">
+                    <text>{{item.bride}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

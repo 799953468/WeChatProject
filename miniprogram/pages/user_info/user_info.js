@@ -5,19 +5,7 @@ Page({
 
   },
   onLoad: function (options) {
-    if (app.globalData.openid && app.globalData.openid != '') {
-      this.setData({
-        openid: app.globalData.openid
-      })
-    }else{
-      app.openidCallback = openid => {
-        if (openid != ''){
-          this.setData({
-            openid: openid
-          })
-        }
-      }
-    }
+    
   },
   onReady: function () {
 

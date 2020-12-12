@@ -1,8 +1,8 @@
 <!--miniprogram/pages/index/index.wxml-->
 <view class="info">
-  <open-data class="user_img" type="userAvatarUrl"></open-data>
+  <image src="{{ avatarUrl }}" class="user_img"></image>
   <view class="user_info">
-    <open-data class="user_name" type="userNickName"></open-data>
+    <view class="user_name">{{ nickName }}</view>
     <view class="user_tel">{{ user_tel }}</view>
   </view>
   <view class="user_list">
@@ -15,8 +15,8 @@
       <span>我收到的请帖</span>
     </view>
     <view class="item">
-      <span>{{ draft }}</span>
-      <span>草稿</span>
+      <span>{{ message }}</span>
+      <span>通知</span>
     </view>
   </view>
   <view class="more"></view>
