@@ -1,7 +1,14 @@
-<!--miniprogram/pages/user_info/user_info.wxml-->
-<view class="info">
-  <view class="item">名称</view>
-  <view class="item"></view>
-  <view class="item"></view>
-  <view class="item"></view>
-</view>
+<template name="list">
+    <block wx:for="{{cells}}" wx:for-item="cellsItem" wx:for-index="cellsIndex" wx:key="cells">
+        <view class="cells">
+            <block wx:for="{{cellsItem}}" wx:for-item="cellItem" wx:for-index="cellIndex" wx:key="cells">
+                <view class="cell {{cellItem.access ? 'cell-access' : ''}}" bindtap="{{cellItem.fn}}">
+                    <view class="cell-bd">{{cellItem.title}}</view>
+                    <view class="cell-ft">{{cellItem.text}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+</template>
+<template is="list" data="{{cells: cells}}"/>
+<button bindtap="edit" class="edit-btn">编 辑</button>

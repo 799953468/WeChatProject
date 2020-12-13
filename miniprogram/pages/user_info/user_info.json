@@ -1,4 +1,4 @@
 {
-  "navigationBarTitleText": "基本信息",
-  "usingComponents": {}
+  "navigationBarTitleText": "个人资料",
+  "enablePullDownRefresh": false
 }
