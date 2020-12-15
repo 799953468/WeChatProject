@@ -1,2 +1,13 @@
 /* miniprogram/pages/more/more.wxss */
-@import '../../weui-wxss/half-screen-dialog/half-screen-dialog.wxss';
+.del-btn {
+  width: 300rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #f00;
+  border-radius: 80rpx;
+  color: #fff;
+}

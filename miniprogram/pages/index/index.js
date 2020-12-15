@@ -25,7 +25,29 @@ Page({
                                       },
                                       success: res => {
                                         app.openid = res.result.openid
-                                        that.getdata()
+                                        db.collection('users').where({
+                                          _openid: app.openid
+                                        }).get({
+                                          success: res =>{
+                                            console.log(res);
+                                            if(res.data.length == 0 ){
+                                              db.collection('users').add({
+                                                data: {
+                                                  _openid: app.openid,
+                                                  avatarUrl: app.userdata.avatarUrl,
+                                                  gender: app.userdata.gender,
+                                                  nickName: app.userdata.nickName,
+                                                  mycard: [],
+                                                  receivedcard: [],
+                                                  message: 0
+                                                }
+                                              })
+                                              .catch(console.error)
+                                            } else {
+                                              that.getdata()
+                                            }
+                                            }
+                                          })
                                       }
                                     })
                                 }

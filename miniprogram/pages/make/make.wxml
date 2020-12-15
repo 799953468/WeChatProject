@@ -1,2 +1,3 @@
 <!--miniprogram/pages/make/make.wxml-->
 <text>miniprogram/pages/make/make.wxml</text>
+<button bindtap="to">123</button>

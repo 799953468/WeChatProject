@@ -8,13 +8,13 @@ Page({
         {
             type: 'default',
             className: '',
-            text: '辅助操作',
+            text: '取消',
             value: 0
         },
         {
             type: 'primary',
             className: '',
-            text: '主操作',
+            text: '确定',
             value: 1
         }
       ]
@@ -25,27 +25,65 @@ Page({
       })
   },
   buttontap(e) {
-      console.log(e.detail)
+    var index = e.detail.index
+    var that = this
+    if(index == 0){
+      that.setData({
+        show: false
+      })
+    } else {
+      that.del()
+    }
   },
   del: function() {
-    wx.authorize({
-      scope: 'scope.record',
-      success () {
-        db.collection('users').where({
-          _openid: app.openid
+    var that = this
+    db.collection('users').where({
+      _openid: app.openid
+    }).get({
+      success: res => {
+        var data = res.data[0]
+        that.setData({
+          id: data._id
         })
-        .remove().then(
+      }
+    })
+    wx.cloud.callFunction({
+      name: 'remove_info',
+      data: {
+        id: that.data.id,
+        table: 'users'
+      },
+      success: res => {
+        console.log(res);
+        if (res.errMsg == "cloud.callFunction:ok") {
           wx.showToast({
             title: '用户删除成功',
-            icon: 'success',
+            icon: 'false',
             duration: 2000
           }),
           setTimeout(function(){
           wx.redirectTo({
-            url: '../user_info/user_info'
+            url: 'pages/user/user'
           })
-        },2000))
+          },2000)
+        } else {
+          wx.showToast({
+            title: '系统错误',
+            icon: 'false',
+            duration: 2000
+          })
+        }
       }
     })
   }
+        //   wx.showToast({
+        //     title: '用户删除成功',
+        //     icon: 'success',
+        //     duration: 2000
+        //   }),
+        //   setTimeout(function(){
+        //   wx.redirectTo({
+        //     url: '../user_info/user_info'
+        //   })
+        // },2000))
 })

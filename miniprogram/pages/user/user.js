@@ -3,6 +3,7 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
+    tel: '未填写'
   },
   onLoad: function (options) {
     
