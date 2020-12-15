@@ -1,0 +1,12 @@
+<!--miniprogram/pages/more/more.wxml-->
+<mp-half-screen-dialog 
+  bindbuttontap="buttontap"
+  show="{{show}}"
+  maskClosable="{{false}}" 
+  title="测试标题B" 
+  subTitle="测试标题B的副标题"
+  desc="辅助描述内容，可根据实际需要安排"
+  tips="辅助提示内容，可根据实际需要安排"
+  buttons="{{buttons}}"
+></mp-half-screen-dialog>
+<button class="weui-btn" type="primary" bindtap="open">Open</button>

@@ -19,26 +19,23 @@
       <span>通知</span>
     </view>
   </view>
-  <view class="more"></view>
 </view>
 <view class="user_setting">
-  <view class="item remind">
-    <button bindtap="todo" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
+  <view class="item remind" bindtap="todo">
     <span>待办事项</span>
     <view class="more"></view>
   </view>
-  <view class="item user_set">
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" bindtap="user_set" hover-class="btn-hover" style="position: absolute;width: 80vw;height: 6vh;"></button>
+  <view class="item user_set" bindtap="user_set">
     <span>用户设置</span>
     <view class="more"></view>
   </view>
 </view>
 <view class="setting">
-  <view class="item">
-    <span>联系客服</span>
+  <view class="item" bindtap="about">
+    <span>关于小程序</span>
     <view class="more"></view>
   </view>
-  <view class="item">
+  <view class="item" bindtap="more">
     <span>更多</span>
     <view class="more"></view>
   </view>

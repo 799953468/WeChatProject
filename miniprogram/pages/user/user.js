@@ -3,7 +3,6 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
-    user_tel: '未知'
   },
   onLoad: function (options) {
     
@@ -67,6 +66,16 @@ Page({
   todo: function() {
     wx.navigateTo({
       url: '/pages/todo/todo',
+    })
+  },
+  about: function() {
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
+  },
+  more: function() {
+    wx.navigateTo({
+      url: '/pages/more/more',
     })
   }
 })
