@@ -1,0 +1,18 @@
+<!--miniprogram/pages/mycard/mycard.wxml-->
+<view wx:if="{{isHide}}">
+  <button>点击制作请帖</button>
+</view>
+<view wx:else>
+  <view class="time-card no-img" wx:for="{{temp}}" wx:key="key">
+    <view class="time-card-cotent-box">
+      <view class="time-card-top">
+        <view class="time-card-title">
+          <text class="time-card-title-text">{{item.Date}}</text>
+        </view>
+      </view>
+      <view class="time-card-sub">
+        <text>{{item.bride}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,4 +1,4 @@
 <!--miniprogram/pages/make/make.wxml-->
 <view>
-  <button open-type="share">分享</button>
+  <button bindtap="addinfo" data-id="{{ id }}" data-index="{{ index }}" open-type="share">分享</button>
 </view>

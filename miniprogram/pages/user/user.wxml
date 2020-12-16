@@ -6,15 +6,15 @@
     <view class="user_tel">{{ tel }}</view>
   </view>
   <view class="user_list">
-    <view class="item">
+    <view class="item" bindtap="mycard">
       <span>{{ mycard }}</span>
       <span>我的请帖</span>
     </view>
-    <view class="item">
+    <view class="item" bindtap="receivedcard">
       <span>{{ receivedcard }}</span>
       <span>我收到的请帖</span>
     </view>
-    <view class="item">
+    <view class="item" bindtap="message">
       <span>{{ message }}</span>
       <span>通知</span>
     </view>

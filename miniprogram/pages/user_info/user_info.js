@@ -30,7 +30,7 @@ Page({
   },
   edit: function(){
     wx.redirectTo({
-      url: 'pages/editPersonInfo/editPersonInfo'
+      url: '/pages/editPersonInfo/editPersonInfo'
     })
   }
 })

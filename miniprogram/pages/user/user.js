@@ -13,15 +13,25 @@ Page({
       _openid: app.openid
     }).get({
       success: res =>{
-        var that = this
-        var data = res.data[0]
+        const that = this
+        const data = res.data[0]
         that.setData({
           avatarUrl: data.avatarUrl,
           nickName: data.nickName,
           message: data.message,
-          mycard: Object.keys(data.mycard).length,
           receivedcard: Object.keys(data.receivedcard).length,
           tel: data.tel == '' ? '未填写' : data.tel
+        })
+      }
+    })
+    db.collection('cards').where({
+      _openid: app.openid
+    }).get({
+      success: res =>{
+        const that = this
+        const data = res.data[0]
+        that.setData({
+          mycard: Object.keys(data.cardinfo).length
         })
       }
     })
@@ -44,21 +54,6 @@ Page({
       }
     })
   },
-  onHide: function () {
-
-  },
-  onUnload: function () {
-
-  },
-  onPullDownRefresh: function () {
-
-  },
-  onReachBottom: function () {
-
-  },
-  onShareAppMessage: function () {
-
-  },
   user_set: function () {
     wx.navigateTo({
       url: "/pages/user_info/user_info"
@@ -77,6 +72,21 @@ Page({
   more: function() {
     wx.navigateTo({
       url: '/pages/more/more',
+    })
+  },
+  mycard: function() {
+    wx.navigateTo({
+      url: '/pages/mycard/mycard',
+    })
+  },
+  receivedcard: function(){
+    wx.navigateTo({
+      url: '/pages/receivedcard/receivedcard',
+    })
+  },
+  message: function() {
+    wx.navigateTo({
+      url: '/pages/message/message',
     })
   }
 })
