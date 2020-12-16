@@ -7,9 +7,17 @@ Page({
   data: {
 
   },
-  to: function() {
-    wx.navigateTo({
-      url: '/pages/card/card',
+  onShareAppMessage: function (res) {
+    this.setData({
+      id: 1
     })
+    if (res.from === 'button') {
+      console.log(res.target);
+    }
+    return {
+      title: '自定义转发标题',
+      path: '/pages/card',
+    
+    }
   }
 })
