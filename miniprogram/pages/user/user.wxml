@@ -31,6 +31,10 @@
   </view>
 </view>
 <view class="setting">
+  <view class="item" bindtap="systeminfo">
+    <span>手机信息</span>
+    <view class="more"></view>
+  </view>
   <view class="item" bindtap="about">
     <span>关于小程序</span>
     <view class="more"></view>

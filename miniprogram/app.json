@@ -12,7 +12,9 @@
     "components/half-screen-dialog/half-screen-dialog",
     "pages/mycard/mycard",
     "pages/receivedcard/receivedcard",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/systemInfo/systemInfo",
+    "pages/history/history"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,0 +1,8 @@
+<view class="card-list">
+    <block wx:for="{{cardList}}" wx:for-item="cardItem" wx:for-index="cardIndex" wx:key="card">
+        <view class="card-item {{nowCard == cardItem.imgUrl ? 'card-item-active' : ''}}" data-url="{{cardItem.imgUrl}}" bindtap="chooseCard">
+            <image src="" class="card-img"></image>
+            <view class="card-title">{{cardItem.title}}</view>
+        </view>
+    </block>
+</view>

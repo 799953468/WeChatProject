@@ -81,12 +81,17 @@ Page({
   },
   receivedcard: function(){
     wx.navigateTo({
-      url: '/pages/receivedcard/receivedcard',
+      url: '/pages/history/history',
     })
   },
   message: function() {
     wx.navigateTo({
       url: '/pages/message/message',
+    })
+  },
+  systeminfo: function() {
+    wx.navigateTo({
+      url: '/pages/systemInfo/systemInfo',
     })
   }
 })
