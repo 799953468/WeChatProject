@@ -47,15 +47,18 @@ Page({
     })
   },
   addinfo: function() {
+    const index = this.data.index
     const bride = this.data.bride
     const bride_tel = this.data.bride_tel
     const groom = this.data.groom
     const groom_tel = this.data.groom_tel
+    const location = this.data.location
+    const date = this.data.date
     db.collection('cards').where({
       _openid: app.openid
     }).update({
       data:{
-        cardinfo: _.push({bride,groom,bride_tel,groom_tel})
+        cardinfo: _.push({index,bride,groom,bride_tel,groom_tel,location,date})
       },
       success: res => {
         console.log(res);

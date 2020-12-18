@@ -1,18 +1,9 @@
-<!--miniprogram/pages/mycard/mycard.wxml-->
-<view wx:if="{{isHide}}">
-  <button>点击制作请帖</button>
-</view>
-<view wx:else>
-  <view class="time-card no-img" wx:for="{{temp}}" wx:key="key">
-    <view class="time-card-cotent-box">
-      <view class="time-card-top">
-        <view class="time-card-title">
-          <text class="time-card-title-text">{{item.Date}}</text>
+<view class="card-list">
+    <block wx:for="{{cardList}}" wx:for-item="cardItem" wx:key="card">
+        <view class="card-item" data-index="{{ cardItem.index }}" data-id="{{ id }}" bindtap="chooseCard">
+            <view class="card-date">{{cardItem.date}}</view>
+            <view class="card-title">新郎：{{cardItem.groom}}</view>
+            <view class="right">新娘：{{cardItem.bride}}</view>
         </view>
-      </view>
-      <view class="time-card-sub">
-        <text>{{item.bride}}</text>
-      </view>
-    </view>
-  </view>
+    </block>
 </view>

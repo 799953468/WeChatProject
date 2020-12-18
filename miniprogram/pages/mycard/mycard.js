@@ -1,42 +1,27 @@
-// miniprogram/pages/mycard/mycard.js
 const app = getApp()
 const db = wx.cloud.database()
 Page({
-  data: {
-
+  data:{
   },
-  onLoad: function (options) {
+  onLoad:function(options){
+    const that = this
     db.collection('cards').where({
       _openid: app.openid
     }).get({
       success: res => {
-        console.log(res);
-        const that = this
+        const data = res.data[0]
         that.setData({
-          temp: res.data
+          id: data._id,
+          cardList: data.cardinfo
         })
       }
     })
   },
-  onReady: function () {
-
-  },
-  onShow: function () {
-
-  },
-  onHide: function () {
-
-  },
-  onUnload: function () {
-
-  },
-  onPullDownRefresh: function () {
-
-  },
-  onReachBottom: function () {
-
-  },
-  onShareAppMessage: function () {
-
+  chooseCard: function(e) {
+    const id = this.data.id
+    const index = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '/pages/card/card?id=' + id + '&index=' + index,
+    })
   }
 })

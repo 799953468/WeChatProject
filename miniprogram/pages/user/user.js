@@ -81,7 +81,7 @@ Page({
   },
   receivedcard: function(){
     wx.navigateTo({
-      url: '/pages/history/history',
+      url: '/pages/receivedcard/receivedcard',
     })
   },
   message: function() {

@@ -1,9 +1,10 @@
 // pages/index.js
+const app = getApp()
+const db = wx.cloud.database()
 Page({
   data: {
     musicOn: false,
     musicOff: true,
-    data: '2020.11.24',
     flag: false,
     index: 1,
     page1: false,
@@ -21,21 +22,26 @@ Page({
   },
 
   onLoad: function (options) {
-    let that=this
-    wx.cloud.database().collection("users").get({
-      success(res){       
+    console.log(options);
+    const that=this
+    db.collection("cards").where({
+      _id: options.id
+    }).get({
+      success(res){
+        const index = options.index
+        const data = res.data[0].cardinfo[index]
+        console.log(data);
         that.setData({
-          groom:res.data[0].groom,
-          bride:res.data[0].bride,
-          bride_tel: res.data[0].bride_tel,
-          groom_tel:res.data[0].groom_tel,
+          groom: data.groom,
+          bride: data.bride,
+          bride_tel: data.bride_tel,
+          groom_tel: data.groom_tel,
+          date: data.date,
           location: {
-            latitude: res.data[0].latitude,
-            longitude: res.data[0].location
+            latitude: data.latitude,
+            longitude: data.location
           },
         })
-        console.log(res.data);
-        
       }
     })
   },

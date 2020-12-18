@@ -1,2 +1,14 @@
-<!--miniprogram/pages/receivedcard/receivedcard.wxml-->
-<text>miniprogram/pages/receivedcard/receivedcard.wxml</text>
+<view wx:if="{{isHide}}">
+    <view>你还没有收到请帖</view>
+</view>
+<view wx:else>
+    <view class="card-list">
+        <block wx:for="{{cardList}}" wx:for-item="cardItem" wx:key="card">
+            <view class="card-item" data-index="{{ cardItem.index }}" data-id="{{ id }}" bindtap="chooseCard">
+                <view class="card-date">{{cardItem.date}}</view>
+                <view class="card-title">新郎：{{cardItem.groom}}</view>
+                <view class="right">新娘：{{cardItem.bride}}</view>
+            </view>
+        </block>
+    </view>
+</view>
