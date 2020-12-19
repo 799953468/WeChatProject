@@ -27,7 +27,7 @@
                     </view>
                 </view>
                 <view class="time-card-sub">
-                    <text>{{item.bride}}</text>
+                    <countdown time="{{item.time}}"></countdown>
                 </view>
             </view>
         </view>

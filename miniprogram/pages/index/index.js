@@ -3,9 +3,9 @@ const app = getApp()
 const db = wx.cloud.database()
 Page({
   data: {
-    temp:[],
+    temp: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isHide: false
+    isHide: false,
   },
   onLoad: function (options) {
     var that = this;
@@ -92,6 +92,7 @@ Page({
     var _this = this
     const str = new Date();
     var nowDate= str.getFullYear() + "-" + (str.getMonth() + 1) + "-" + str.getDate();
+    var nowTime = str.getHours() + ":" + str.getMinutes();
     db.collection('cards').get({
       success: res => {
         var temp = res.data
@@ -100,12 +101,13 @@ Page({
           for ( var i = 0; i < temp[index].cardinfo.length; i++) {
             const date = temp[index].cardinfo[i].date
             if (date == nowDate) {
+              temp[index].cardinfo[i].time = (_this.time_to_sec(temp[index].cardinfo[i].time) - _this.time_to_sec(nowTime))*1000
               tmp.push(temp[index].cardinfo[i])
             }
           }
         }
         _this.setData({
-          temp: tmp
+          temp: tmp,
         })
       }
     })
@@ -132,5 +134,12 @@ Page({
             }
         });
     }
+  },
+  time_to_sec: function (time) {
+    var s = '';
+    var hour = time.split(':')[0];
+    var min = time.split(':')[1];
+    s = Number(hour*3600) + Number(min*60);
+    return s;
   }
 })
