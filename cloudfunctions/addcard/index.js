@@ -9,7 +9,6 @@ exports.main = async (event, context) => {
   
   const bride = event.bride
   const openid = event.openid
-  console.log(openid);
   db.collection('cards').where({
     _openid: openid
   }).update({

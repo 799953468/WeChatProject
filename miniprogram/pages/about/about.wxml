@@ -3,7 +3,7 @@
     <view class="webapp-intro">
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">后端支持</view>
-            <view class="webapp-intro-content">百度地图API：http://lbsyun.baidu.com/</view>
+            <view class="webapp-intro-content">腾讯地图API：https://lbs.qq.com/</view>
         </view>
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">作者</view>

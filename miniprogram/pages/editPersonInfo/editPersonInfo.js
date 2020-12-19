@@ -49,7 +49,6 @@ Page({
     },2000))
   },
   changeGender: function(e) {
-    console.log(e)
     var genderIndex = e.detail.value
     if (genderIndex != "null") {
       this.setData({

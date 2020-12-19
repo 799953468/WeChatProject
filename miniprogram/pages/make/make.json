@@ -1,4 +1,10 @@
 {
   "navigationBarTitleText": "发布",
-  "usingComponents": {}
+  "component": true,
+  "usingComponents": {
+    "mp-toptips": "../../components/toptips/toptips",
+    "mp-cells": "../../components/cells/cells",
+    "mp-cell": "../../components/cell/cell",
+    "mp-form": "../../components/form/form"
+  }
 }

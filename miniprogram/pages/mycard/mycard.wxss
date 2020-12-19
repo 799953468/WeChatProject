@@ -16,35 +16,6 @@
     overflow: hidden;
 }
 
-.card-item-active {
-    border: 6rpx solid #47a86c;
-}
-
-.card-item-active::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -80rpx;
-    right: -80rpx;
-    z-index: 4;
-    width: 160rpx;
-    height: 160rpx;
-    transform: rotate(45deg);
-    background-color: #47a86c;
-}
-
-.card-item-active::after {
-    content: '在用';
-    display: block;
-    position: absolute;
-    top: 5px;
-    right: 3px;
-    z-index: 4;
-    text-align: center;
-    transform: rotate(45deg);
-    color: #fff;
-}
-
 .card-title {
     box-sizing: border-box;
     position: absolute;

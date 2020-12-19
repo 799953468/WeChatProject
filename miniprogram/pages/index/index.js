@@ -29,7 +29,6 @@ Page({
                                           _openid: app.openid
                                         }).get({
                                           success: res =>{
-                                            console.log(res);
                                             if(res.data.length == 0 ){
                                               db.collection('users').add({
                                                 data: {
@@ -91,14 +90,22 @@ Page({
   },
   getdata: function (){
     var _this = this
-    const nowDate = new Date().toLocaleDateString();
-    db.collection('cards').where({
-      Date: nowDate
-    }).get({
+    const str = new Date();
+    var nowDate= str.getFullYear() + "-" + (str.getMonth() + 1) + "-" + str.getDate();
+    db.collection('cards').get({
       success: res => {
-        console.log(res.data);
+        var temp = res.data
+        var tmp = []
+        for (var index in temp){
+          for ( var i = 0; i < temp[index].cardinfo.length; i++) {
+            const date = temp[index].cardinfo[i].date
+            if (date == nowDate) {
+              tmp.push(temp[index].cardinfo[i])
+            }
+          }
+        }
         _this.setData({
-          temp: res.data
+          temp: tmp
         })
       }
     })

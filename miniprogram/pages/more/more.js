@@ -54,7 +54,6 @@ Page({
         table: 'users'
       },
       success: res => {
-        console.log(res);
         if (res.errMsg == "cloud.callFunction:ok") {
           wx.showToast({
             title: '用户删除成功',

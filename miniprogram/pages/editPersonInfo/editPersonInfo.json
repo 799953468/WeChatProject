@@ -1,4 +1,7 @@
 {
     "navigationBarTitleText": "编辑个人资料",
-    "enablePullDownRefresh": false
+    "component": true,
+    "usingComponents": {
+        "mp-cells": "../components/cells/cells"
+    }
 }

@@ -1,1 +1,5 @@
 /* miniprogram/pages/make/make.wxss */
+@import '../../components/weui-wxss/dist/style/weui.wxss';
+.weui-btn-area {
+  margin: 20px 16px 8px;
+}

@@ -1,4 +1,43 @@
 <!--miniprogram/pages/make/make.wxml-->
-<view>
-  <button bindtap="addinfo" data-id="{{ id }}" data-index="{{ index }}" open-type="share">分享</button>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<view class="page">
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="新人姓名">
+                <mp-cell prop="name" title="新郎" ext-class="">
+                    <input bindinput="formInputChange" data-field="groom" class="weui-input" placeholder="请输入新郎名字"/>
+                </mp-cell>
+                <mp-cell prop="name" title="新娘" ext-class="">
+                    <input bindinput="formInputChange" data-field="bride" class="weui-input" placeholder="请输入新娘名字"/>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells title="联系方式">
+                <mp-cell prop="tel" title="新郎电话" ext-class="">
+                    <input bindinput="formInputChange" data-field="groom_tel" class="weui-input" placeholder="请输入新郎电话" maxlength="11"/>
+                </mp-cell>
+                <mp-cell prop="tel" title="新娘电话" ext-class="">
+                    <input bindinput="formInputChange" data-field="bride_tel" class="weui-input" placeholder="请输入新娘电话" maxlength="11"/>
+                </mp-cell>
+            </mp-cells>
+            <mp-cells title="详情">
+              <mp-cell prop="date" title="日期" ext-class="">
+                <picker data-field="date" mode="date" value="{{date}}" start="2020-12-19" end="2099-12-31" bindchange="bindDateChange">
+                  <view class="weui-input">{{date}}</view>
+                </picker>
+              </mp-cell>
+              <mp-cell prop="time" title="时间" ext-class="">
+                <picker data-field="time" mode="time" value="{{time}}" bindchange="bindTimeChange">
+                  <view class="weui-input">{{time}}</view>
+                </picker>
+              </mp-cell>
+              <mp-cell prop="address" title="地址" ext-class="">
+                    <input bindtap="map" data-field="map" class="weui-input" placeholder="{{ address }}"/>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">创建并分享</button>
+        </view>
+    </view>
 </view>

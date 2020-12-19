@@ -22,7 +22,6 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(options);
     const that=this
     db.collection("cards").where({
       _id: options.id
@@ -30,7 +29,6 @@ Page({
       success(res){
         const index = options.index
         const data = res.data[0].cardinfo[index]
-        console.log(data);
         that.setData({
           groom: data.groom,
           bride: data.bride,

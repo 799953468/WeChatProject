@@ -1,7 +1,4 @@
 <view wx:if="{{isHide}}">
-    <view>你还没有收到请帖</view>
-</view>
-<view wx:else>
     <view class="card-list">
         <block wx:for="{{cardList}}" wx:for-item="cardItem" wx:key="card">
             <view class="card-item" data-index="{{ cardItem.index }}" data-id="{{ id }}" bindtap="chooseCard">
@@ -11,4 +8,7 @@
             </view>
         </block>
     </view>
+</view>
+<view wx:else>
+    <view class="title">你还没有收到请帖</view>
 </view>

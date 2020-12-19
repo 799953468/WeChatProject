@@ -11,7 +11,6 @@ Page({
     }).get({
       success: res => {
         const data = res.data[0].receivedcard
-        console.log(data);
         if (data.length > 0){
           that.setData({
             isHide: true
