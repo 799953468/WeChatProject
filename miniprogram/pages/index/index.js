@@ -4,8 +4,13 @@ const db = wx.cloud.database()
 Page({
   data: {
     temp: [],
+    background: ['demo-text-1', 'demo-text-1', 'demo-text-1'],
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHide: false,
+    indicatorDots: true,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
   },
   onLoad: function (options) {
     var that = this;
@@ -109,6 +114,7 @@ Page({
         _this.setData({
           temp: tmp,
         })
+        console.log(this.data.temp);
       }
     })
   },
@@ -141,5 +147,14 @@ Page({
     var min = time.split(':')[1];
     s = Number(hour*3600) + Number(min*60);
     return s;
+  },
+  changeIndicatorDots() {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+  onShow: function() {
+    const that = this
+    that.onLoad()
   }
 })

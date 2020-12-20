@@ -15,20 +15,29 @@
     <view wx:else>请升级微信版本</view>
 </view>
 <view wx:else>
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicator-color}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+                <image src="../../images/swiper/1.png" style="width:100%;height:100%;"></image>
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
     <view class="time-container">
         <view class="time-card no-img" wx:for="{{temp}}" wx:key="key">
             <view class="time-card-cotent-box">
                 <view class="time-card-top">
                     <view class="time-card-title">
-                        <text class="time-card-title-text">{{item.Date}}</text>
+                        <text class="time-card-title-groom">新郎：{{item.groom}}</text>
+                        <text class="time-card-title-bride">新娘：{{item.bride}}</text>
                     </view>
                     <view class="time-card-avatar-box">
                         <image src="{{item.user.avatar_large}}" class="time-card-avatar"></image>
                     </view>
                 </view>
-                <view class="time-card-sub">
-                    <countdown time="{{item.time}}"></countdown>
-                </view>
+                <view class="time-card-sub">距离婚礼开始还有：<countdown time="{{item.time}}"></countdown></view>
             </view>
         </view>
     </view>
