@@ -30,6 +30,12 @@
   font-size: 35rpx;
 }
 
+.title{
+  font-size: 32rpx;
+  text-align: center;
+  color: #000;
+}
+
 .time-container {
   background: #e0e0e0;
   padding: 0;
@@ -49,7 +55,7 @@
 }
 
 .time-card.no-img {
-    height: 210rpx;
+    height: 230rpx;
 }
 
 .time-card-img {
@@ -71,14 +77,14 @@
 .time-card-title {
   width: 650rpx;
   height: 60rpx;
-  margin-top: 15rpx;
+  margin-top: 30rpx;
 }
 
 .time-card-title-bride {
   font-size: 32rpx;
   line-height: 30rpx;
   display: block;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   color: #fff;
 }
 
@@ -141,4 +147,13 @@
 .swiper-item {
   width: 100%;
   height: 100%;
+}
+
+.user_img {
+  position: absolute;
+  box-sizing: border-box;
+  bottom: 0;
+  right: 10rpx;
+  height: 60rpx;
+  width: 60rpx;
 }
