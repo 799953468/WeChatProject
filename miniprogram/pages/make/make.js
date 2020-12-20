@@ -76,7 +76,9 @@ Page({
         const that = this
         that.setData({
           latitude: res.latitude,
-          longitude: res.longitude
+          longitude: res.longitude,
+          selectFile: this.selectFile.bind(this),
+          uplaodFile: this.uplaodFile.bind(this)
         })
       }
      })
@@ -153,4 +155,25 @@ Page({
       }
     })
   },
+  chooseImage: function (e) {
+    var that = this;
+    wx.chooseImage({
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function (res) {
+            that.setData({
+                files: that.data.files.concat(res.tempFilePaths)
+            });
+        }
+    })
+  },
+  previewImage: function(e){
+      wx.previewImage({
+          current: e.currentTarget.id, // 当前显示图片的http链接
+          urls: this.data.files // 需要预览的图片http链接列表
+      })
+  },
+  selectFile(files) {
+      console.log('files', files)
+  }
 })
