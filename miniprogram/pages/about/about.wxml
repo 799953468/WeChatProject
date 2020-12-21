@@ -13,7 +13,7 @@
         <view class="webapp-intro-item">
             <view class="webapp-intro-title">此项目所使用到的API</view>
             <view class="webapp-intro-content">
-            wx.request、wx.chooseImage、wx.previewImage、wx.playVoice、wx.saveFile、wx.setStorage、wx.getStorage、wx.clearStorage、wx.getStorageInfo、wx.getLocation、wx.getSystemInfo、wx.onAccelerometerChange、wx.showToast、wx.showModal、wx.showActionSheet、wx.setNavigationBarTitle、wx.navigateTo、wx.redirectTo、wx.login
+            wx.request、wx.chooseImage、wx.setStorage、wx.getStorage、wx.clearStorage、wx.getStorageInfo、wx.getLocation、wx.getSystemInfo、wx.navigateTo、wx.redirectTo、wx.login、wx.navigateBack、wx.cloud.data.database、wx.showToast、wx.getSetting、wx.getUserInfo、wx.cloud.callFunction、wx.showModal、wx.previewImage
             </view>
         </view>
     </view>

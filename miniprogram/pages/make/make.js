@@ -60,25 +60,25 @@ Page({
     const time = this.data.time
     if (bride == undefined || bride_tel == undefined || groom == undefined || groom_tel == undefined || latitude == undefined || longitude == undefined || address == undefined || date == undefined || time == undefined) {
       wx.showToast({
-        title: '资料修改成功',
-        icon: 'success',
+        title: '资料未填写完成',
+        icon: 'error',
         duration: 2000
       })
     } else {
       const that = this
       that.addinfo()
+      that.onShareAppMessage()
     }
   },
   onLoad: function() {
+    wx.hideShareMenu()
     wx.getLocation({
       type: 'wgs84',
       success: res => {
         const that = this
         that.setData({
           latitude: res.latitude,
-          longitude: res.longitude,
-          selectFile: this.selectFile.bind(this),
-          uplaodFile: this.uplaodFile.bind(this)
+          longitude: res.longitude
         })
       }
      })
@@ -110,14 +110,17 @@ Page({
   onUnload () {
     chooseLocation.setLocation(null);
   },
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     if (res.from === 'button') {
-      console.log(res.target);
+      // 来自页面内转发按钮
+      console.log(res.target)
     }
     return {
       title: '婚礼请帖',
-      path: '/pages/card',
-      image: ''
+      path: '/pages/index/index?id=' + id + '&index=' + index,
+      imageUrl: '../../images/share.jpg',
+      success: res =>{
+      }
     }
   },
   onReady: function(){

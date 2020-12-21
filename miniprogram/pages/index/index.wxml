@@ -25,9 +25,9 @@
           </swiper-item>
         </block>
     </swiper>
-    <image src="../../images/今日新人.png"></image>
+    <image src="../../images/今日新人.png" style="width:100%;height:142rpx;"></image>
     <view class="time-container">
-        <view class="time-card no-img" wx:for="{{temp}}" wx:key="key">
+        <view class="time-card no-img" wx:for="{{temp}}" wx:key="key" wx:if="{{item.time>0}}">
             <view class="time-card-cotent-box">
                 <view class="time-card-top">
                     <view class="time-card-title">

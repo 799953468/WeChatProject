@@ -37,12 +37,12 @@
             </mp-cells>
             <mp-cells title="照片">
                 <mp-cell>
-                    <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="图片上传" tips="图片上传提示"></mp-uploader>
+                    <mp-uploader select="{{selectFile}}" files="{{files}}" max-count="5" title="图片上传" tips="图片上传"></mp-uploader>
                 </mp-cell>
             </mp-cells>
         </mp-form>
         <view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="submitForm">创建并分享</button>
+            <button class="weui-btn" data-index="{{index}}" data-id="{{id}}" type="primary" bindtap="submitForm" open-type="share">创建并分享</button>
         </view>
     </view>
 </view>

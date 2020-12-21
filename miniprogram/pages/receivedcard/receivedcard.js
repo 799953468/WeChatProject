@@ -13,11 +13,9 @@ Page({
         const data = res.data[0].receivedcard
         if (data.length > 0){
           that.setData({
-            isHide: true
+            isHide: true,
+            cardList: data
           })
-          db.collection('cards').where({
-            
-          }).get({})
         }
       }
     })

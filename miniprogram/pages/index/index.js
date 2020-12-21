@@ -1,6 +1,7 @@
 // miniprogram/pages/index/index.js
 const app = getApp()
 const db = wx.cloud.database()
+const _ = db.command
 Page({
   data: {
     temp: [],
@@ -14,57 +15,83 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    wx.hideTabBar({})
-        wx.getSetting({
+    wx.getSetting({
+      success: function(res) {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
             success: function(res) {
-                if (res.authSetting['scope.userInfo']) {
-                    wx.getUserInfo({
-                        success: function(res) {
-                          wx.showTabBar({})
-                            wx.login({
-                                success: res => {
-                                    wx.cloud.callFunction({
-                                      name: 'getinfo',
-                                      data: {
-                                        code: res.code
-                                      },
-                                      success: res => {
-                                        app.openid = res.result.openid
-                                        db.collection('users').where({
-                                          _openid: app.openid
-                                        }).get({
-                                          success: res =>{
-                                            if(res.data.length == 0 ){
-                                              db.collection('users').add({
-                                                data: {
-                                                  _openid: app.openid,
-                                                  avatarUrl: app.userdata.avatarUrl,
-                                                  gender: app.userdata.gender,
-                                                  nickName: app.userdata.nickName,
-                                                  mycard: [],
-                                                  receivedcard: [],
-                                                  message: 0
-                                                }
-                                              })
-                                              .catch(console.error)
-                                            } else {
-                                              that.getdata()
-                                            }
-                                            }
-                                          })
-                                      }
-                                    })
-                                }
-                            });
+              wx.login({
+                success: res => {
+                  wx.cloud.callFunction({
+                    name: 'getinfo',
+                    data: {
+                      code: res.code
+                    },
+                    success: res => {
+                      app.openid = res.result.openid
+                      db.collection('users').where({
+                        _openid: app.openid
+                      }).get({
+                        success: res =>{
+                          if(res.data.length == 0 ){
+                            db.collection('users').add({
+                              data: {
+                                _openid: app.openid,
+                                avatarUrl: app.userdata.avatarUrl,
+                                gender: app.userdata.gender,
+                                nickName: app.userdata.nickName,
+                                mycard: [],
+                                receivedcard: [],
+                                message: 0
+                              }
+                            })
+                            .catch(console.error)
+                          } else {
+                            that.getdata()
+                          }
                         }
-                    });
-                } else {
-                    that.setData({
-                        isHide: true
-                    });
+                      })
+                    }
+                  })
                 }
+              });
             }
-        });
+          });
+        } else {
+          that.setData({
+            isHide: true
+          });
+        }
+      }
+    });
+    if (options.index && options.id) {
+      console.log(options);
+      const index = options.index
+      const id = options.id
+      db.collection('users').where({
+        _openid: app.openid
+      }).get({
+        success: res => {
+          const receivedcard = res.data[0].receivedcard
+          for (var i in receivedcard){
+            if (receivedcard[i].id == id && receivedcard[i].index == index) {
+              break
+            } else {
+              db.collection('users').where({
+                _openid: app.openid
+              }).update({
+                data: {
+                  receivedcard: _.push({id,index})
+                }
+              })
+            }
+          }
+        }
+      })
+      wx.navigateTo({
+        url: '/pages/card/card?id=' + id + '&index=' + index,
+      })
+    }
   },
   onReady: function () {
     
@@ -114,7 +141,6 @@ Page({
         _this.setData({
           temp: tmp,
         })
-        console.log(this.data.temp);
       }
     })
   },
@@ -122,10 +148,10 @@ Page({
     if (e.detail.userInfo) {
         var that = this;
         app.userdata = e.detail.userInfo
-        wx.showTabBar({})
         that.setData({
             isHide: false
         });
+        that.onLoad()
         that.initdata()
     } else {
         wx.showModal({
