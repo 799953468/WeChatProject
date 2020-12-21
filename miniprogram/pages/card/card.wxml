@@ -50,7 +50,7 @@
       <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/xi.jpg"></image>
     </view>
     <view class="d1-10 {{ show1_10 }}">{{ groom }} & {{ bride }}</view>
-    <view class="d1-11 {{ show1_11 }}">{{ data }}</view>
+    <view class="d1-11 {{ show1_11 }}">{{ date }}</view>
   </view>
   <view class="page page2" hidden="{{ page2 }}">
     <view class="d2-2 {{ show2_2 }}">
@@ -74,7 +74,7 @@
       <view>参与我们的婚礼</view>
       <view>共同见证这幸福的时刻</view>
       <view>------------------</view>
-      <view>2020.11.24 11:28</view>
+      <view>{{ date }}</view>
       <view></view>
       <view></view>
     </view>
@@ -175,15 +175,17 @@
     </view>
     <view class="d10-2 {{ show10_5 }}">
       <map
-				id="map"
-				latitude="{{location.latitude}}"
-				longitude="{{location.longitude}}"
-				show-location="{{showPosition}}"
-        enable-traffic="{{isEnableTraffic}}"
-				scale="16"
-			>
-			</map>
+      id="myMap"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      data-markers="{{markers}}"
+      bindmarkertap='gotohere'
+      show-location
+    ></map>
     </view>
+    <view class="d10-5 {{ show10_5 }}">新郎：{{groom_tel}}</view>
+    <view class="d10-5 {{ show10_5 }}">新娘：{{bride_tel}}</view>
     <view class="d10-3 {{ show10_3 }}">
       <image src="cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/images/boy.jpg"></image>
     </view>

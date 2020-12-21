@@ -11,11 +11,23 @@ Page({
     }).get({
       success: res => {
         const data = res.data[0].receivedcard
+        var a = []
         if (data.length > 0){
           that.setData({
             isHide: true,
-            cardList: data
           })
+          const temp = data
+          for (var i in temp) {
+            db.collection('cards').doc(temp[i].id).get({
+              success: res => {
+                const tmp = res.data.cardinfo
+                a.push(tmp[temp[i].index])
+                that.setData({
+                  cardList: a
+                })
+              }
+            })
+          }
         }
       }
     })

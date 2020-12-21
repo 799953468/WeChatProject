@@ -213,7 +213,7 @@ image{
   bottom: 70rpx;
   left: 50%;
   opacity: 0;
-  margin-left: -50rpx;
+  margin-left: -60rpx;
 }
 
 .d1-11 {
@@ -607,4 +607,11 @@ image{
 
 .d10-4 {
   right: 30rpx;
+}
+
+.d10-5 {
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
 }

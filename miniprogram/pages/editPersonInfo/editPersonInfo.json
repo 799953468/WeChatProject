@@ -2,6 +2,6 @@
     "navigationBarTitleText": "编辑个人资料",
     "component": true,
     "usingComponents": {
-        "mp-cells": "../components/cells/cells"
+        "mp-cells": "../../components/cells/cells"
     }
 }

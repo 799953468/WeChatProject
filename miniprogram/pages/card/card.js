@@ -1,6 +1,7 @@
 // pages/index.js
 const app = getApp()
 const db = wx.cloud.database()
+
 Page({
   data: {
     musicOn: false,
@@ -17,28 +18,32 @@ Page({
     page8: true,
     page9: true,
     page10: true,
-		isShowPosition: true,
-    isEnableTraffic: true,
   },
 
   onLoad: function (options) {
-    const that=this
+    const that = this
     db.collection("cards").where({
       _id: options.id
     }).get({
       success(res){
         const index = options.index
         const data = res.data[0].cardinfo[index]
+        console.log(data);
         that.setData({
           groom: data.groom,
           bride: data.bride,
           bride_tel: data.bride_tel,
           groom_tel: data.groom_tel,
           date: data.date,
-          location: {
+          time: data.time,
+          latitude: data.latitude,
+          longitude: data.longitude,
+          markers: [{
+            id: 1,
             latitude: data.latitude,
-            longitude: data.location
-          },
+            longitude: data.longitude,
+            title: data.address
+          }]
         })
       }
     })
@@ -341,6 +346,8 @@ Page({
     setTimeout(this.show10_2, 1000)
   },
   show10_2: function () {
+    console.log(this.data.latitude);
+    console.log(this.data.longitude);
     this.setData({
       show10_3: 'fadeInRight animated show',
       show10_4: 'fadeInLeft animated show'
@@ -363,37 +370,6 @@ Page({
     const backgroundAudioManager = wx.getBackgroundAudioManager()
     backgroundAudioManager.title = 'music'
     backgroundAudioManager.src = 'cloud://invitationcard-1gwrctmp0b02c9ca.696e-invitationcard-1gwrctmp0b02c9ca-1304225837/music/mymusic.mp3'
-  },
-
-  onShow: function () {
-
-  },
-
-
-  onHide: function () {
-
-  },
-
-  onUnload: function () {
-
-  },
-
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   },
   Off: function () {
     const backgroundAudioManager = wx.getBackgroundAudioManager()
@@ -542,4 +518,31 @@ Page({
       }
     }
   },
+  gotohere:function(e){    
+  console.log(e);    
+  let lat = ''; // 获取点击的markers经纬度    
+  let lon = ''; // 获取点击的markers经纬度    
+  let name = '';  
+  let markerId = e.markerId;  
+  let markers = this.data.markers;
+  for (let item of markers){      
+    if (item.id === markerId) {        
+      lat = item.latitude;        
+      lon = item.longitude;        
+      name = item.title;    
+      let plugin = requirePlugin('routePlan');
+      let key = 'G3XBZ-Q2NR4-4KJUZ-X5MEV-6EBVO-M2BPN';
+      let referer = '路线规划';
+      let endPoint = JSON.stringify({
+          'name': name,
+          'latitude': lat,
+          'longitude': lon
+      });
+      wx.navigateTo({
+          url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+      });      
+      break;      
+    }    
+  }  
+}
 })

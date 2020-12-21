@@ -49,6 +49,7 @@ Page({
                           } else {
                             that.getdata()
                           }
+                          that.tocard(options)
                         }
                       })
                     }
@@ -64,8 +65,10 @@ Page({
         }
       }
     });
+  },
+  tocard: function(options) {
     if (options.index && options.id) {
-      console.log(options);
+      const that = this
       const index = options.index
       const id = options.id
       db.collection('users').where({
@@ -73,28 +76,41 @@ Page({
       }).get({
         success: res => {
           const receivedcard = res.data[0].receivedcard
-          for (var i in receivedcard){
-            if (receivedcard[i].id == id && receivedcard[i].index == index) {
-              break
-            } else {
-              db.collection('users').where({
-                _openid: app.openid
-              }).update({
-                data: {
-                  receivedcard: _.push({id,index})
-                }
-              })
+          if (receivedcard.length == 0){
+            db.collection('users').where({
+              _openid: app.openid
+            }).update({
+              data: {
+                receivedcard: _.push({id,index})
+              },
+              success: res => {
+                console.log(res);
+              }
+            })
+          } else {
+            for (var i in receivedcard){
+              if (receivedcard[i].id == id && receivedcard[i].index == index) {
+              } else {
+                db.collection('users').where({
+                  _openid: app.openid
+                }).update({
+                  data: {
+                    receivedcard: _.push({id,index})
+                  },
+                  success: res => {
+                    console.log(res);
+                  }
+                })
+              }
             }
           }
+          
         }
       })
       wx.navigateTo({
         url: '/pages/card/card?id=' + id + '&index=' + index,
       })
     }
-  },
-  onReady: function () {
-    
   },
   initdata: function(info){
     db.collection('users').where({
